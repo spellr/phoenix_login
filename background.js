@@ -2,6 +2,25 @@ chrome.runtime.onInstalled.addListener(function() {
 });
 
 chrome.browserAction.onClicked.addListener(async function(tab) {
+    var getCookie = new Promise((resolve, reject) => {
+        chrome.cookies.get({
+            url: "https://myinfo.fnx.co.il",
+            name: ".ASPXAUTH"
+        },
+        function(cookie) {
+            resolve(cookie);
+        }
+        )
+    })
+
+    cookie = await getCookie;
+
+
+    if (cookie) {
+        window.open("https://myinfo.fnx.co.il/fnx/MyZone/Insurance/HomePage");
+        return;
+    }
+
     var user_id = "XXX"
     var phone_number = "XXX"
 
