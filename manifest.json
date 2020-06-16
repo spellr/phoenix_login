@@ -1,0 +1,17 @@
+{
+  "name": "Phoenix",
+  "version": "1.0",
+  "permissions": [
+    "*://myinfo.fnx.co.il/",
+    "cookies"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {},
+  "description": "Open your Phoenix account. No fuss no muss",
+  "manifest_version": 2
+}
